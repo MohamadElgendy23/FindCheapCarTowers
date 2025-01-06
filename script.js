@@ -30,7 +30,6 @@ findTowersBtn.addEventListener("click", function () {
       filteredTowers = filteredTowers.sort(
         (tower1, tower2) => tower1.avgPrice - tower2.avgPrice
       );
-      console.log(filteredTowers);
     }
 
     // display filtered towers
