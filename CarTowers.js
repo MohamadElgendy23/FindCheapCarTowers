@@ -4,7 +4,7 @@ export const carTowersArr = [
     name: "Cartow Towing",
     location: "Salt Lake City, UT",
     avgPrice: 300,
-    cars: "[All Makes]",
+    cars: ["All Makes"],
   },
   {
     name: "Any Terrain Towing Service Co.",
@@ -28,6 +28,6 @@ export const carTowersArr = [
     name: "Park City Towing",
     location: "Park City, UT",
     avgPrice: 450,
-    cars: "All Makes",
+    cars: ["All Makes"],
   },
 ];
