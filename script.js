@@ -9,11 +9,6 @@ const towersContainer = document.querySelector(".towers-container");
 
 let sortPrice = false;
 
-let filteredTowers = JSON.parse(
-  localStorage.getItem("filtered-towers") ?? "[]"
-);
-renderFilteredTowers(filteredTowers);
-
 findTowersBtn.addEventListener("click", function () {
   const make = vehicleMake.value;
   const location = vehicleLocation.value;
@@ -37,8 +32,6 @@ findTowersBtn.addEventListener("click", function () {
       );
     }
 
-    localStorage.setItem("filtered-towers", filteredTowers);
-
     // display filtered towers
     renderFilteredTowers(filteredTowers);
   }
@@ -54,7 +47,11 @@ priceSort.addEventListener("change", function () {
 function renderFilteredTowers(filteredTowers) {
   filteredTowers.forEach((tower) => {
     const { name, location, avgPrice } = tower;
-    towersContainer.innerHTML += createTowerContainer(name, location, avgPrice);
+    towersContainer.innerHTML += createTowerContainer(
+      name,
+      location,
+      avgPrice
+    ).innerHTML;
   });
 }
 
@@ -73,5 +70,5 @@ function createTowerContainer(name, location, avgPrice) {
 
   towerDiv.append(towerName, towerLocation, towerAvgPrice);
 
-  return towerDiv.innerHTML;
+  return towerDiv;
 }
