@@ -53,13 +53,10 @@ body {
     margin-top: 10px;
 }
 .towers-container {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 15px;
-}
-.tasks-container p {
-    margin-top: 0;
+    gap: 10px;
 }

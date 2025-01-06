@@ -30,10 +30,14 @@ findTowersBtn.addEventListener("click", function () {
       filteredTowers = filteredTowers.sort(
         (tower1, tower2) => tower1.avgPrice - tower2.avgPrice
       );
+      console.log(filteredTowers);
     }
 
     // display filtered towers
     renderFilteredTowers(filteredTowers);
+
+    vehicleMake.value = "";
+    vehicleLocation.value = "";
   }
 });
 
@@ -62,13 +66,15 @@ function createTowerContainer(name, location, avgPrice) {
   const towerName = document.createElement("h3");
   towerName.innerHTML = name;
 
-  const towerLocation = document.createElement("p");
+  const towerLocation = document.createElement("span");
   towerLocation.textContent = location;
 
-  const towerAvgPrice = document.createElement("p");
+  const towerAvgPrice = document.createElement("span");
   towerAvgPrice.textContent = "$" + avgPrice;
 
-  towerDiv.append(towerName, towerLocation, towerAvgPrice);
+  towerDiv.appendChild(towerName);
+  towerDiv.appendChild(towerLocation);
+  towerDiv.appendChild(towerAvgPrice);
 
   return towerDiv;
 }
